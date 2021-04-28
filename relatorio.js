@@ -11,11 +11,16 @@ function carregaInfo(){
 
     document.getElementById("fotoUser").innerHTML = `<img src="${usuario.linkFoto}" width="100%">`;
     document.getElementById("bioUser").innerHTML  = `<h4>${usuario.nome}</h4>
+                                                     <button onclick="logout()" type="button" class="btn btn-primary">Logout</button> 
                                                      <hr>
+                                                     
                                                      <strong>Racf:</strong> ${usuario.racf} <br>
                                                      <strong>Email:</strong> ${usuario.email} <br>
                                                      <strong>Ramal:</strong> ${usuario.ramal}`;
 
+}
 
-
+function logout(){
+    localStorage.removeItem("userDASH");
+    window.location = "index.html";
 }
